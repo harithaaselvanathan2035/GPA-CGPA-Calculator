@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA calculator</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="home">
+       <a href="main.html">
+        <i class="fa-solid fa-house"></i>
+       </a>
+    </div>
+    <div id="prof">
+        <a href="profile.html">
+          <i class="fa-solid fa-user"></i>
+        </a>
+    </div>
+    <div id="full">
+        <h1>Calculate CGPA</h1>
+        <center>
+        <input type="text" id="subc" placeholder="Number of Sem">
+        <button onclick="enterc()" id="btn">Enter</button>
+
+        <div id="calc"></div>
+         <div id="btns">
+        <button onclick="resc()">Calculate</button>
+        <button onclick="window.location.reload()">Refresh</button>
+        <button ><a href="main.html">Back</a></button>
+        </div>
+
+        <div id="dispc"></div>
+        </center>
+    </div>
+    <div id="offc">
+        <a href="index.html">
+        <i class="fa-solid fa-power-off"></i>
+        </a>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

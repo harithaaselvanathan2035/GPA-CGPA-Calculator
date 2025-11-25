@@ -1,0 +1,586 @@
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url(Poppins-Medium.ttf);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins-Medium';
+}
+
+/* main page */
+body {
+    background-color: rgb(5, 130, 146);
+}
+#prof i{
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    margin-left: 1470px;
+    margin-top: -50px;
+}
+#prof{
+    margin-top: -20px;
+}
+#profc i{
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    margin-left: 1470px;
+    margin-top:20px;
+}
+#off i{
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    margin-left: 1470px;
+    margin-top: 170px;
+}
+#offc i{
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    margin-left: 1470px;
+    margin-top: 400px;
+}
+h1{
+    text-align: center;
+    font-size: 45px;
+    padding-bottom: 30px;
+}
+#tit{
+    border-radius: 12px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+                rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-left: 370px;
+    margin-right: 370px;
+    margin-top: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: transparent;
+    backdrop-filter: blur(10px); 
+}
+
+#container{
+    display: flex;
+    margin-left: 135px;
+}
+
+#gpa{
+    text-align: center;
+    margin: 20px;
+    font-size: 32px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    padding: 20px;
+    border-radius: 7px;
+    
+}
+#cgpa{
+    text-align: center;
+    margin: 20px;
+    font-size: 32px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    padding: 20px;
+    margin-left: 160px;
+    border-radius: 7px;
+   
+}
+
+#gpa:hover{
+    box-shadow:
+        30px 30px 60px rgba(0, 0, 0, 0.4),
+        -30px -30px 60px rgba(255, 255, 255, 0.1);
+
+    transform: translateY(1px);
+    cursor: pointer;
+}
+
+#cgpa:hover{
+    box-shadow:
+        30px 30px 60px rgba(0, 0, 0, 0.4),
+        -30px -30px 60px rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+#btnc{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color:  rgb(5, 130, 146);
+    
+}
+
+#btnc a{
+    text-decoration: none;
+     color:  rgb(5, 130, 146);
+}
+
+
+/* gpa page */
+#btns{
+    display: none;
+}
+#btns a{
+    text-decoration: none;
+    color: black;
+}
+#full{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-left: 290px;
+    margin-right: 290px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+#full h1{
+    margin-top: 20px;
+}
+#sub{
+    height:40px;
+    width: 300px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#sub::placeholder{
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+
+}
+
+#btn{
+    margin-left: 20px;
+    height: 40px;
+    width: 80px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+#btn:hover{
+    box-shadow:
+        30px 30px 60px rgba(0, 0, 0, 0.4),
+        -30px -30px 60px rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-5px);
+}
+#btns button{
+    margin-left: 20px;
+    height: 40px;
+    width: 120px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#btns button:hover{
+    box-shadow:
+        30px 30px 60px rgba(0, 0, 0, 0.4),
+        -30px -30px 60px rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-5px);
+}
+
+#cal input{
+    height:40px;
+    width: 300px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#cal input::placeholder{
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.grade-points{
+    margin-left: 20px;
+}
+.sub-title{
+    text-align: left;
+    margin-left: 165px;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+/* cpga page */
+#subc{
+    height:40px;
+    width: 300px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#subc::placeholder{
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#calc input{
+    height:40px;
+    width: 300px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#calc input::placeholder{
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/*profile page*/
+#home i{
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+#profileSection{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+#profileSection h1{
+     margin-top: -20px;
+}
+
+#profileSection button{
+    margin-left: 20px;
+    height: 40px;
+    width: 240px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#profileSection button:hover{
+    box-shadow:
+        30px 30px 60px rgba(0, 0, 0, 0.4),
+        -30px -30px 60px rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-5px);
+}
+#profilePic{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    width: 150px;
+    height: 150px;
+}
+
+#name{
+    margin-top: -20px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+#profileSection h2{
+    margin-bottom: 10px;
+}
+.semBlock input{
+    height:40px;
+    width: 300px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.semBlock input::placeholder{
+    color: black;
+    font-size: 16px;
+    padding: 10px;
+}
+.sem{
+margin-top: 20px;
+}
+.gpa{
+    margin-left: 30px;
+}
+.cgpa{
+    margin-left: 5px;
+}
+.semBlock{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+#add{
+    margin-top: 20px;
+}
+
+/* index page*/
+#login{
+    margin-top: 170px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-left: 500px;
+    margin-right: 500px;
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+#login input{
+    height:40px;
+    width: 300px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    padding-left: 10px;
+    font-size: 16px;
+}
+#login input::placeholder{
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+
+}
+#login button{
+    margin-left: 20px;
+    height: 40px;
+    width: 120px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#login button:hover{
+    box-shadow:
+        30px 30px 60px rgba(0, 0, 0, 0.4),
+        -30px -30px 60px rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-5px);
+}
+#login a{
+    text-decoration: underline;
+    color: black;
+}
+.pa{
+    margin-top: -20px;
+    margin-left: 115px;
+}
+
+#login h5{
+    margin-left: 15px;
+    margin-top: -10px;
+}
+#su{
+    margin-left: 15px;
+}
+
+/* forget page */
+#forg{
+    margin-top: 170px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-left: 500px;
+    margin-right: 500px;
+    border-radius: 15px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+#forg a{
+    text-decoration: none;
+    color: black;
+}
+
+#forg input{
+    height:40px;
+    width: 300px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    padding-left: 10px;
+    font-size: 16px;
+}
+#forg input::placeholder{
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+
+}
+
+#forg button{
+    margin-left: 20px;
+    height: 40px;
+    width: 120px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#forg button:hover{
+    box-shadow:
+        30px 30px 60px rgba(0, 0, 0, 0.4),
+        -30px -30px 60px rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-5px);
+}
+
+/* signup page */
+#sign{
+    margin-top: 130px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-left: 500px;
+    margin-right: 500px;
+    border-radius: 15px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.na{
+    height:40px;
+    width: 300px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.na::placeholder{
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+
+}
+#photo {
+    display: none;   
+}
+
+.photo-btn {
+    display: inline-block;
+    height: 40px;
+    width: 300px;
+    border-radius: 7px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+                rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+    border-bottom: 2px solid black;
+
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    line-height: 40px; 
+}
+
+.photo-btn:hover {
+    transform: scale(1.02);
+}
+
+#sign button{
+    margin-left: 20px;
+    height: 40px;
+    width: 120px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-bottom: 2px solid black;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+#sign button:hover{
+    box-shadow:
+        30px 30px 60px rgba(0, 0, 0, 0.4),
+        -30px -30px 60px rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-5px);
+}
+
+#sign h5{
+    margin-left: 15px;
+}
+#sign a{
+    margin-left: 15px;
+    text-decoration: underline;
+    color: black;
+}

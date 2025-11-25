@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     
+    <div id="login">
+        <center>
+        <h1>Login!</h1>
+
+        <input type="number" id="lphone" placeholder="Enter Phone Number"><br><br>
+        <input type="password" id="lpass" placeholder="Enter Password"><br><br>
+        </center>
+        <a href="forget.html" class="pa">Forget password?</a><br><br>
+      
+      <center>  <button onclick="login()">Login</button> 
+        
+        <h5>New user?</h5>
+        <a href="signup.html" id="su">Sign Up</a> </center>
+    </div>
+
+<script>
+function login() {
+    let phone = document.getElementById("lphone").value;
+    let pass = document.getElementById("lpass").value;
+
+    let users = JSON.parse(localStorage.getItem("users")) || {};
+
+    if (!users[phone]) {
+        alert("User not found!");
+        return;
+    }
+
+    if (users[phone].password !== pass) {
+        alert("Incorrect password!");
+        return;
+    }
+
+    localStorage.setItem("currentUser", phone);
+
+    alert("Login successful!");
+    window.location.href = "main.html";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="sign">
+        <h1>Sign Up!</h1>
+        <center>
+        <input type="text" id="na" class="na" placeholder="Enter Your Name"><br><br>
+        <input type="number" id="phone" class="na" placeholder="Enter Phone Number"><br><br>
+        <input type="password" id="pass" class="na" placeholder="Enter Password"><br><br>
+        <input type="password" id="rpass" class="na" placeholder="Rewrite Password"><br><br>
+        
+        <div id="photoBox">
+         <label for="photo" class="photo-btn">Upload Profile Photo</label>
+         <input type="file" id="photo" accept="image/*">
+         </div>
+
+        <button onclick="signup()">Sign Up</button>
+
+        <h5>Member?</h5>
+        <a href="index.html">Login</a>
+        </center>
+    </div>
+
+<script>
+function signup() {
+
+    let name = document.getElementById("na").value;
+    let phone = document.getElementById("phone").value;
+    let pass = document.getElementById("pass").value;
+    let rpass = document.getElementById("rpass").value;
+    let file = document.getElementById("photo").files[0];
+
+    if (!name || !phone || !pass || !rpass || !file) {
+        alert("Please fill all fields!");
+        return;
+    }
+
+    if (pass !== rpass) {
+        alert("Passwords do not match!");
+        return;
+    }
+
+    let users = JSON.parse(localStorage.getItem("users")) || {};
+
+    if (users[phone]) {
+        alert("User already exists!");
+        return;
+    }
+
+    let reader = new FileReader();
+    reader.onload = function () {
+
+        users[phone] = {
+            name: name,
+            phone: phone,
+            password: pass,
+            photo: reader.result,
+            semesterData: []
+        };
+
+        localStorage.setItem("users", JSON.stringify(users));
+
+        alert("Signup Successful!");
+        window.location.href = "index.html";
+    };
+
+    reader.readAsDataURL(file);
+}
+</script>
+
+</body>
+</html>

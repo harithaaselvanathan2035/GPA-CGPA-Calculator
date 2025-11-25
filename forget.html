@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="forg">
+        <h1>Forget Password?</h1>
+         <center>
+        <input type="number" id="phone" placeholder="Enter Phone Number"><br><br>
+        <input type="password" id="pass" placeholder="Enter New Password"><br><br>
+        <input type="password" id="rpass" placeholder="Rewrite Password"><br><br>
+        <button onclick="resetPass()">Enter</button>
+        <button ><a href="index.html">back</a></button>
+        </center>
+    </div>
+
+<script>
+function resetPass() {
+
+    let phone = document.getElementById("phone").value;
+    let pass = document.getElementById("pass").value;
+    let rpass = document.getElementById("rpass").value;
+
+    let users = JSON.parse(localStorage.getItem("users")) || {};
+
+    if (!phone || !pass || !rpass) {
+        alert("Fill all fields!");
+        return;
+    }
+
+    // CHECK IF USER EXISTS
+    if (!users[phone]) {
+        alert("Phone number not found!");
+        return;
+    }
+
+    if (pass !== rpass) {
+        alert("Passwords do not match!");
+        return;
+    }
+
+    // UPDATE PASSWORD FOR THAT USER ONLY
+    users[phone].password = pass;
+
+    // SAVE UPDATED USERS BACK
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("Password updated successfully!");
+    window.location.href = "index.html";
+}
+
+</script>
+
+</body>
+</html>

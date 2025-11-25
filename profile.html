@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="home">
+       <a href="main.html">
+        <i class="fa-solid fa-house"></i>
+       </a>
+    </div>
+
+    <div id="profileSection">
+        <h1>Your Profile</h1>
+        <center>
+        <img id="profilePic" width="120" height="120" style="border-radius:50%;"><br><br>
+
+        <input type="file" id="newPhoto" accept="image/*" style="display:none">
+
+        <button onclick="document.getElementById('newPhoto').click();">
+            Change Profile Photo
+        </button>
+
+        <br><br>
+        <div id="name">
+        <p id="pname"></p>
+        <p id="pphone"></p>
+        </div>
+        <h2>Academic Details</h2>
+
+        <div id="gpaContainer"></div>
+
+        <button onclick="addSem()" id="add">+ Add Semester</button><br><br>
+
+        <button onclick="saveGPA()">Save</button><br><br>
+
+        <button onclick="logout()">Logout</button>
+        </center>
+    </div>
+
+<script>
+
+window.onload = function () {
+
+    let users = JSON.parse(localStorage.getItem("users")) || {};
+    let phone = localStorage.getItem("currentUser");
+
+
+    if (!phone || !users[phone]) {
+        alert("No active session. Please login.");
+        window.location.href = "login.html";
+        return;
+    }
+
+    let user = users[phone];
+
+    document.getElementById("pname").innerText = "Name: " + user.name;
+    document.getElementById("pphone").innerText = "Phone: " + user.phone;
+
+    document.getElementById("profilePic").src = user.photo;
+
+  
+    loadSemesters(user.semesterData);
+};
+
+function loadSemesters(semesters) {
+
+    let container = document.getElementById("gpaContainer");
+
+    semesters.forEach(item => {
+
+        let div = document.createElement("div");
+        div.className = "semBlock";
+        div.style.marginBottom = "15px";
+
+        div.innerHTML = `
+            Semester: <input type="text" class="sem" value="${item.sem}"><br><br>
+            GPA: <input type="text" class="gpa" value="${item.gpa}"><br><br>
+            CGPA: <input type="text" class="cgpa" value="${item.cgpa}"><br><br>
+            <button onclick="this.parentElement.remove()">Delete</button>
+            <hr>
+        `;
+
+        container.appendChild(div);
+    });
+}
+
+function addSem() {
+    let container = document.getElementById("gpaContainer");
+
+    let div = document.createElement("div");
+    div.className = "semBlock";
+    div.style.marginBottom = "15px";
+
+    div.innerHTML = `
+        Semester: <input type="text" class="sem" placeholder="Sem"><br><br>
+        GPA: <input type="text" class="gpa" placeholder="GPA"><br><br>
+        CGPA: <input type="text" class="cgpa" placeholder="CGPA"><br><br>
+        <button onclick="this.parentElement.remove()">Delete</button>
+        <hr>
+    `;
+
+    container.appendChild(div);
+}
+
+
+function saveGPA() {
+
+    let phone = localStorage.getItem("currentUser");
+    let users = JSON.parse(localStorage.getItem("users")) || {};
+    let user = users[phone];
+
+    let sems = document.getElementsByClassName("sem");
+    let gpas = document.getElementsByClassName("gpa");
+    let cgpas = document.getElementsByClassName("cgpa");
+
+    user.semesterData = [];
+
+    for (let i = 0; i < sems.length; i++) {
+        user.semesterData.push({
+            sem: sems[i].value,
+            gpa: gpas[i].value,
+            cgpa: cgpas[i].value
+        });
+    }
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("Saved Successfully!");
+}
+
+
+document.getElementById("newPhoto").addEventListener("change", function () {
+
+    let phone = localStorage.getItem("currentUser");
+    let users = JSON.parse(localStorage.getItem("users"));
+
+    let file = this.files[0];
+    if (!file) return;
+
+    let reader = new FileReader();
+
+    reader.onload = function () {
+
+        users[phone].photo = reader.result;
+
+        localStorage.setItem("users", JSON.stringify(users));
+
+        document.getElementById("profilePic").src = reader.result;
+
+        alert("Profile Photo Updated!");
+    };
+
+    reader.readAsDataURL(file);
+});
+
+function logout() {
+    localStorage.removeItem("currentUser");
+    window.location.href = "index.html";
+}
+
+</script>
+
+</body>
+</html>
